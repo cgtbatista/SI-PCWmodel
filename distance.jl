@@ -1,19 +1,8 @@
-#includet("./distance.jl")
-#mindist("/home/user/Documents/phd/sandbox/pcw.pdb", "/home/user/Documents/phd/sandbox/tensile.lammpstrj","XY12"; fstep=1, dist_cutoff=40.0)
-
-
 using MolecularMinimumDistances
 using PDBTools
 using MolSimToolkit
 using LinearAlgebra
 using StaticArrays
-
-## Loading the PDB and TRAJECTORY information
-function loading_files()
-    pdbfile = "/home/user/Documents/phd/sandbox/pcw.pdb"
-    trajectory = "/home/user/Documents/phd/sandbox/equilibration.dcd"
-    return pdbfile, trajectory
-end
 
 ## Setting the scanned residues and segments
 function pdb_dummy_selection(pdbfile::String, monitored_segment::String)
